@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<section class="section-conten padding-y bg">
+
+{% include 'includes/alerts.html' %}
+<div class="container">
+	<div class="row">
+	<aside class="col-md-3">
+		<!--   SIDEBAR   -->
+		<ul class="list-group">
+			<a class="list-group-item active" href="#"> Meus Pedidos </a>
+			<a class="list-group-item" href="#"> Transações </a>
+			<a class="list-group-item" href="#">Reembolsos </a>
+			<a class="list-group-item" href="#">Definições </a>
+			<a class="list-group-item" href="#"> Meus Item de venda </a>
+			<a class="list-group-item" href="#"> Ordens Recebidas </a>
+		</ul>
+		<br>
+		<a class="btn btn-light btn-block" href="{% url 'logout' %}"> <i class="fa fa-power-off"></i> <span class="text">Sair</span> </a>
+		<!--   SIDEBAR .//END   -->
+	</aside>
+	<main class="col-md-9">
+		<article class="card">
+		<header class="card-header">
+			<strong class="d-inline-block mr-3">ID do Pedido: </strong>
+			<span>Data do Pedido: </span>
+		</header>
+		<div class="card-body">
+			<div class="row">
+				<div class="col-md-8">
+					<h6 class="text-muted">Entregar para</h6>
+					<p>Cliente <br>
+					Contacto:             Email: <br>
+			    	Localidade:  <br>
+			    	Caixa Postal: 
+			 		</p>
+				</div>
+				<div class="col-md-4">
+					<h6 class="text-muted">Pagamento</h6>
+					<span class="text-success">
+						<i class="fab fa-lg fa-cc-visa"></i>
+					    Visa  **** 4216
+					</span>
+					<p>Subtotal: AOA 356 <br>
+					 Frete:  AOA 56 <br>
+					 <span class="b">Total:  AOA 456 </span>
+					</p>
+				</div>
+			</div> <!-- row.// -->
+		</div> <!-- card-body .// -->
+		<div class="table-responsive">
+		<table class="table table-hover">
+			<tr>
+				<td width="65">
+					<img src="../images/items/1.jpg" class="img-xs border">
+				</td>
+				<td>
+					<p class="title mb-0">Nome do Producto</p>
+					<var class="price text-muted">AOA 145</var>
+				</td>
+				<td> Vendedor <br> Vayusha </td>
+				<td width="250"> <a href="#" class="btn btn-outline-primary">Monitorar</a> <a href="#" class="btn btn-light"> Detalhes </a> </td>
+			</tr>
+		
+		</table>
+		</div> <!-- table-responsive .end// -->
+		</article> <!-- order-group.// -->
+	</main>
+</div> <!-- row.// -->
+</div>
+
+
+</section>
+
+{% endblock %}
