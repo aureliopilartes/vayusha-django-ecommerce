@@ -15,6 +15,13 @@ a:hover {
   text-decoration: none;
 }
 
+.textError{
+
+  text-align: center;
+
+}
+
+
 .img-wrap {
   text-align: center;
   display: block;
