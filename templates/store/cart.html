@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{%load humanize %}
 {% block content %}
 
 <section class="section-content padding-y bg">
@@ -67,8 +67,8 @@
 	</td>
 	<td>
 		<div class="price-wrap">
-			<var class="price">AOA {{ cart_item.sub_total }}</var>
-			<small class="text-muted"> AOA {{ cart_item.product.price }} cada </small>
+			<var class="price">AOA {{ cart_item.sub_total|floatformat:2|intcomma }}</var>
+			<small class="text-muted"> AOA {{ cart_item.product.price|floatformat:2|intcomma}} cada </small>
 		</div> <!-- price-wrap .// -->
 	</td>
 	<td class="text-right">
@@ -88,15 +88,15 @@
 		<div class="card-body">
 			<dl class="dlist-align">
 			  <dt>SubTotal:</dt>
-			  <dd class="text-right">AOA {{total}}</dd>
+			  <dd class="text-right">AOA {{total| floatformat:2|intcomma}}</dd>
 			</dl>
 			<dl class="dlist-align">
 			  <dt>Frete:</dt>
-			  <dd class="text-right"> AOA {{tax}}</dd>
+			  <dd class="text-right"> AOA {{tax| floatformat:2|intcomma}}</dd>
 			</dl>
 			<dl class="dlist-align">
 			  <dt>Total:</dt>
-			  <dd class="text-right text-dark b"><strong type="numer"> {{grand_total}} AOA</strong></dd>
+			  <dd class="text-right text-dark b"><strong type="numer"> {{grand_total|floatformat:2|intcomma}} AOA</strong></dd>
 			</dl>
 			<hr>
 			<p class="text-center mb-3">

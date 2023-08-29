@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load humanize %}
 {% block content %}
 
 
@@ -96,12 +96,12 @@
       	</td>
       	<td>
       		<!-- col.// -->
-      				<label for="">{{cart_item.quantity}}</label>
+      				<label for="">{{ cart_item.quantity}}</label>
       	</td>
       	<td>
       		<div class="price-wrap">
-      			<var class="price">AOA {{ cart_item.sub_total }}</var>
-      			<small class="text-muted"> AOA {{ cart_item.product.price }} cada </small>
+      			<var class="price">AOA {{ cart_item.sub_total|floatformat:2|intcomma }}</var>
+      			<small class="text-muted"> AOA {{ cart_item.product.price | floatformat:2|intcomma }} cada </small>
       		</div> <!-- price-wrap .// -->
       	</td>
 

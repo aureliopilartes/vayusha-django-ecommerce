@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '52$5ujr925j_8)+c4+yhwik_+vq6e13#fxi5**_$rv80pn3(sf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['vayusha-env.eba-uni4rc4t.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.humanize',
     'django.contrib.staticfiles',
     'category',
     'accounts',
@@ -84,11 +85,14 @@ AUTH_USER_MODEL = 'accounts.Account'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'vayusha',
+        'USER': 'pilarteslander',
+        'PASSWORD': 'Pil7765at',
+        'HOST': 'vayusha.cadnskza4djm.us-east-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -146,6 +150,16 @@ MESSAGE_TAGS = {
 # SMTP configuration
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'pilarteslander@gmail.com '
-EMAIL_HOST_PASSWORD = 'Pil7765at$'
+EMAIL_HOST_USER = 'rathan.kumar049@gmail.com'
+EMAIL_HOST_PASSWORD = 'Giveme99$'
 EMAIL_USE_TLS = True
+
+AWS_ACCESS_KEY_ID = 'AKIAXQKBNTQPA2RFZ4ZQ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'vayusha-s3'
+AWS_S3_SIGNATURE_NAME = 's3v4',
+AWS_S3_REGION_NAME = 'us-east-1'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL =  None
+AWS_S3_VERITY = True
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
